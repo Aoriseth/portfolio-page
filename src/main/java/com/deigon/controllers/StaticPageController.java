@@ -17,4 +17,9 @@ public class StaticPageController {
     public String index(){
         return "index";
     }
+
+    @RequestMapping("/sketchbook/pages")
+    public String pages(){
+        return "index";
+    }
 }

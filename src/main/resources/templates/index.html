@@ -10,16 +10,19 @@
 
 </head>
 <body>
+    <div class="demo-layout mdl-layout mdl-layout--fixed-header mdl-js-layout mdl-color--grey-100 is-upgraded">
+                <th:block th:include="fragments/navbar :: navbar">test</th:block>
+                <main class="mdl-layout__content">
+                    <div class="mdl-grid">
+                        <div class="mdl-cell mdl-cell--2-col mdl-cell--hide-tablet mdl-cell--hide-phone"></div>
+                        <div class="mdl-cell mdl-cell--8-col">
+                             <th:block th:include="fragments/card :: card"></th:block>
+                        </div>
+                    </div>
+                </main>
+    </div>
 
-<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
-    <th:block th:include="fragments/navbar :: navbar">test</th:block>
-    <main class="mdl-layout__content">
-        <div class="page-content">
-            <p>Welcome to my portfolio website</p>
-            <p>Goto <a th:href="@{/sketchbook}" href="#">Sketchbook</a></p>
-        </div>
-    </main>
-</div>
+
 </body>
 
 </html>

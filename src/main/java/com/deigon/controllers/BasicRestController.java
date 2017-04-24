@@ -12,7 +12,7 @@ import java.util.concurrent.atomic.AtomicLong;
  * This is the main controller of the website and will handle simple REST requests
  */
 @RestController
-public class MainController {
+public class BasicRestController {
     private static final String template = "Hello, %s!";
     private final AtomicLong counter = new AtomicLong();
 
