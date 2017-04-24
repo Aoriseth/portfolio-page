@@ -13,4 +13,8 @@ public class StaticPageController {
     public String sketchbook(){
         return "sketchbook";
     }
+    @RequestMapping("/")
+    public String index(){
+        return "index";
+    }
 }
