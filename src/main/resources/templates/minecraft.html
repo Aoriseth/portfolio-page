@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Lennart Cockx - Minecraft Server</title>
+    <link th:href="@{/css/main.css}" rel = "stylesheet" type = "text/css" href = "#" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"/>
+    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css"/>
+    <script src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+    <script type="text/javascript">
+        function copyUrl(){
+            var snackbarContainer = document.querySelector('#demo-toast-example');
+            var range = document.getSelection().getRangeAt(0);
+            range.selectNode(document.getElementById("toCopy"));
+            window.getSelection().addRange(range);
+            document.execCommand("copy");
+            window.getSelection().empty();
+
+            var data = {message: 'Copied url to clipboard!'};
+            snackbarContainer.MaterialSnackbar.showSnackbar(data);
+        }
+    </script>
+</head>
+<body>
+<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+    <th:block th:include="fragments/navbar :: navbar">test</th:block>
+    <main class="mdl-layout__content">
+
+        <div class="mdl-grid">
+            <div class="mdl-cell mdl-cell--2-col mdl-cell--hide-tablet mdl-cell--hide-phone"></div>
+            <div class="mdl-cell mdl-cell--8-col">
+                <th:block th:include="fragments/card-minecraft :: card">card-minecraft</th:block>
+            </div>
+        </div>
+    </main>
+</div>
+
+<div id="demo-toast-example" class="mdl-js-snackbar mdl-snackbar">
+    <div class="mdl-snackbar__text"></div>
+    <button class="mdl-snackbar__action" type="button"></button>
+</div>
+</body>
+</html>

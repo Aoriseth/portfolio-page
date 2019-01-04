@@ -1,6 +1,7 @@
 package com.deigon.controllers;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 /**
@@ -16,6 +17,16 @@ public class StaticPageController {
     @RequestMapping("/")
     public String index(){
         return "index";
+    }
+
+    @GetMapping("/minecraft")
+    public String sendToMinecraftServer(){
+        return "redirect:http://94.227.65.222:25566/";
+    }
+
+    @GetMapping({"/minecraftInfo","/minecraftinfo"})
+    public String minecraftInfo(){
+        return "minecraft";
     }
 
     @RequestMapping("/sketchbook/pages")
